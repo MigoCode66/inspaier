@@ -1,0 +1,226 @@
+/* Variables */
+$black: #222222;
+$wihte: #ffffff;
+$gray: #d0d2cf;
+$purple: #b2a1ff;
+$green: #a4f5a6;
+$box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+/* Typography */ /* default font is Space Grotesk */
+$default-line-height: 1.6;
+$default-font-size: 16px;
+
+h1 {
+  font-size: calc($default-font-size * 3.8154);
+  line-height: calc($default-line-height * $default-font-size * 3.8154);
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  letter-spacing: calc($default-font-size * 3.8154 * -0.05);
+}
+
+h2 {
+  font-size: calc($default-font-size * 3.0527);
+  line-height: calc($default-line-height * $default-font-size * 3.0527);
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  letter-spacing: calc($default-font-size * 3.0527 * -0.4);
+}
+
+h3 {
+  font-size: calc($default-font-size * 2.4414);
+  line-height: calc($default-line-height * $default-font-size * 2.4414);
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  letter-spacing: calc($default-font-size * 2.4414 * -0.03);
+}
+
+h4 {
+  font-size: calc($default-font-size * 1.9531);
+  line-height: calc($default-line-height * $default-font-size * 1.9531);
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  letter-spacing: calc($default-font-size * 1.9531 * -0.02);
+}
+
+h5 {
+  font-size: calc($default-font-size * 1.5625);
+  line-height: calc($default-line-height * $default-font-size * 1.5625);
+  font-family: var(--font-outfit);
+  font-weight: 500;
+  letter-spacing: calc($default-font-size * 1.5625 * -0.01);
+}
+
+h6 {
+  font-size: calc($default-font-size * 1.25);
+  line-height: calc($default-line-height * $default-font-size * 1.25);
+  letter-spacing: calc($default-font-size * 1.25 * -0.01);
+}
+
+p {
+  font-size: $default-font-size;
+  line-height: calc($default-line-height * $default-font-size);
+  letter-spacing: calc($default-font-size * 1.25 * 0.05);
+}
+
+b {
+  font-size: $default-font-size;
+  line-height: calc($default-line-height * $default-font-size);
+  font-weight: 600;
+  letter-spacing: calc($default-font-size * 1.25 * 0.05);
+}
+
+.sp {
+  font-size: 11px;
+  line-height: calc($default-line-height * 11px);
+  letter-spacing: calc(11px * 0.05);
+}
+
+.xsp {
+  font-size: 7px;
+  line-height: calc($default-line-height * 7px);
+  letter-spacing: calc(7px * 0.05);
+}
+
+/* Global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-space-grotesk);
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+  color: $wihte;
+  overflow-x: overlay;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  background: $purple;
+  color: $wihte;
+  font-family: var(--font-space-grotesk);
+  font-size: $default-font-size;
+  line-height: calc($default-line-height * $default-font-size);
+  font-weight: 600;
+  letter-spacing: calc($default-font-size * 1.25 * 0.05);
+  cursor: pointer;
+}
+
+.purple {
+  color: $purple;
+}
+
+.green {
+  color: $green;
+}
+
+.gray {
+  color: $gray;
+}
+
+/* Navbar */
+
+nav {
+  width: 100dvw;
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  .logo {
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    li {
+      cursor: pointer;
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}
+
+/* Main page */
+
+.Main {
+  min-height: 100dvh;
+  width: 100vw;
+  max-width: 100%;
+  background: $black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    display: flex;
+    gap: 10px;
+  }
+  .images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    .row1,
+    .row2,
+    .row3 {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      li {
+        position: relative;
+        .image {
+          border-radius: 5px;
+          box-shadow: $box-shadow;
+        }
+        .author {
+          position: absolute;
+          bottom: -17.6px;
+          text-align: end;
+          width: 100%;
+        }
+        .hoverelement {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(4px);
+          cursor: pointer;
+          opacity: 0;
+          transition: 0.2s opacity;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          color: $wihte;
+          text-decoration: none;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .row1 {
+      width: 27vw;
+    }
+    .row2 {
+      width: 31vw;
+    }
+    .row3 {
+      width: 36vw;
+    }
+  }
+}
