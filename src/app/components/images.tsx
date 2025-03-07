@@ -11,20 +11,18 @@ type ImageData = {
 };
 
 const images = () => {
-  let index = [];
-  for (let i: number = 0; i < 3; i++) {
-    index.push(i);
+  let numberofrows: number | Array<number> = 3;
+  let temp = [];
+  for (let i: number = 0; i < numberofrows; i++) {
+    temp.push(i);
   }
+  numberofrows = temp;
 
   return (
     <div className="images">
-      {index.map((i) => {
+      {numberofrows.map((i) => {
         return (
-          <ul
-            className={`row${i + 1}`}
-            key={i}
-            data-speed={'0.1'}
-          >
+          <ul className={`row${i + 1}`} key={i} data-speed={'0.1'}>
             {data[i].map((data: ImageData) => {
               return (
                 <li

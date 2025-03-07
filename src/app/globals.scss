@@ -1,9 +1,10 @@
 /* Variables */
-$black: #222222;
+$black: #121212;
 $wihte: #ffffff;
 $gray: #d0d2cf;
 $purple: #b2a1ff;
 $green: #a4f5a6;
+$yellow: #fadc46;
 $box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 /* Typography */ /* default font is Space Grotesk */
 $default-line-height: 1.6;
@@ -22,7 +23,7 @@ h2 {
   line-height: calc($default-line-height * $default-font-size * 3.0527);
   font-family: var(--font-outfit);
   font-weight: 700;
-  letter-spacing: calc($default-font-size * 3.0527 * -0.4);
+  letter-spacing: calc($default-font-size * 3.0527 * -0.04);
 }
 
 h3 {
@@ -105,7 +106,7 @@ button {
   border: none;
   border-radius: 5px;
   box-shadow: $box-shadow;
-  background: $purple;
+  background: rgba($yellow, 0.9);
   color: $wihte;
   font-family: var(--font-space-grotesk);
   font-size: $default-font-size;
@@ -148,7 +149,7 @@ nav {
     li {
       cursor: pointer;
       &:hover {
-        color: $purple;
+        color: $yellow;
       }
     }
   }
@@ -164,15 +165,28 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: column;
-  h1 {
+  position: relative;
+  header {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+    h1 {
+      display: flex;
+      gap: 10px;
+    }
   }
   .images {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 20px;
+    z-index: 1;
+    background: $black;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+      rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;
+    border-bottom: 1px solid rgb(38, 38, 38);
     .row1,
     .row2,
     .row3 {
@@ -221,6 +235,87 @@ nav {
     }
     .row3 {
       width: 36vw;
+    }
+  }
+}
+
+/* Footer */
+
+footer {
+  width: 100vw;
+  max-width: 100%;
+  background: #1c1c1c;
+  height: 250px;
+  position: absolute;
+  bottom: 0px;
+  z-index: 0;
+  position: sticky;
+  background-image: radial-gradient(rgb(38, 38, 38) 1px, transparent 0);
+  background-size: 40px 40px;
+  padding: 4rem 10rem;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    .row1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .wraper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .name {
+          font-family: var(--font-space-grotesk);
+          font-size: 20px;
+        }
+        .version {
+          padding: 5px 10px;
+          border-radius: 15px;
+          border: 2px solid $yellow;
+          color: $yellow;
+          width: fit-content;
+        }
+      }
+      .lastUpdate {
+        color: rgb(82, 82, 91);
+      }
+    }
+    .row2 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .linkContainer {
+        .link {
+          font-size: $default-font-size;
+          line-height: calc($default-line-height * $default-font-size);
+          letter-spacing: calc($default-font-size * 1.25 * 0.05);
+          color: $wihte;
+          text-decoration: none;
+          background-image: linear-gradient(
+            90deg,
+            hsla(0, 0%, 100%, 0.4) 50%,
+            transparent 0
+          );
+          background-position: 0 18px;
+          background-repeat: repeat-x;
+          background-size: 4px 2px;
+          padding: 0 3px;
+          &:hover {
+            color: $yellow;
+            background-image: linear-gradient(
+              90deg,
+              $yellow 50%,
+              transparent 0
+            );
+            background-color: rgba($yellow, 0.2);
+          }
+        }
+        sup {
+          font-size: 11px;
+          color: $yellow;
+          font-weight: 700;
+        }
+      }
     }
   }
 }

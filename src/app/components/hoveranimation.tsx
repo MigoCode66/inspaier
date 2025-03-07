@@ -14,13 +14,11 @@ const HoverAnimation = ({ children }: HoverAnimationProps) => {
   }
   const author = children[0] as ReactNode;
   const url = children[1] as string;
-  console.log(url, children?.toString().split('//1///'), children);
 
   const HoverStartHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     setShow(false);
   };
   const HoverEndHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log(show);
     setShow(true);
   };
 
