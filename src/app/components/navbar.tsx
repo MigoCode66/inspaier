@@ -15,9 +15,6 @@ const Navbar = () => {
           <p className="sp">About Me</p>
         </li>
         <li>
-          <p className="sp">Buy me a coffy</p>
-        </li>
-        <li>
           <button className="sp">Add your portfolio</button>
         </li>
       </ul>
