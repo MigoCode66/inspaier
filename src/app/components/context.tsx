@@ -1,10 +1,17 @@
 'use client';
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-export const viewContext = createContext('viewContext');
+
+
+export const viewContext = createContext<Array<string | React.Dispatch<React.SetStateAction<string | undefined>> | undefined>>([]);
 
 const ViewContext = ({ children }: { children: React.ReactNode }) => {
-  return <viewContext.Provider value="hiden">{children}</viewContext.Provider>;
+  const [view, setView] = useState<string>();
+  return (
+    <viewContext.Provider value={[view, setView]}>
+      {children}
+    </viewContext.Provider>
+  );
 };
 
 export default ViewContext;

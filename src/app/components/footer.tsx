@@ -9,7 +9,7 @@ const Footer = () => {
         <li className="row1">
           <div className="wraper">
             <p className="name">Inspaier</p>
-            <p className="version sp">InDEV v1.2.0</p>
+            <p className="version sp">v1.0.0</p>
           </div>
           <p className="lastUpdate">Last Update 03-03-2025</p>
         </li>
