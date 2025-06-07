@@ -16,13 +16,7 @@ const Navbar = () => {
   };
   return (
     <nav>
-      <Image
-        className="logo"
-        src="/images/Logo.png"
-        alt="Logo"
-        width={79}
-        height={19}
-      />
+      <p>Inspaier</p>
       <ul>
         <li>
           <p className="sp">About Me</p>
