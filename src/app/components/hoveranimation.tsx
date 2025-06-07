@@ -30,7 +30,7 @@ const HoverAnimation = ({ children }: HoverAnimationProps) => {
         onMouseEnter={HoverStartHandler}
         onMouseLeave={HoverEndHandler}
         onClick={() => {
-          rauter.push('/redirect?url=' + url);
+          window.open(url);
         }}
       >
         Creted by <p className="">@{author}</p>

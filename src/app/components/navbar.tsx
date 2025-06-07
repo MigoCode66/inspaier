@@ -1,24 +1,30 @@
-import React from 'react';
+'use client';
+import React, { useContext } from 'react';
 import Image from 'next/image';
+import { viewContext } from './context';
 const Navbar = () => {
+  const context = useContext(viewContext);
+  if (!context) {
+    throw new Error('viewContext must be used within a Provider');
+  }
+  const [view, setView] = context as [
+    string,
+    React.Dispatch<React.SetStateAction<string | undefined>>
+  ];
+  const clickHandler = (e: React.MouseEvent) => {
+    setView('block');
+  };
   return (
     <nav>
-      <Image
-        className="logo"
-        src="/images/Logo.png"
-        alt="Logo"
-        width={79}
-        height={19}
-      />
+      <p>Inspaier</p>
       <ul>
         <li>
           <p className="sp">About Me</p>
         </li>
         <li>
-          <p className="sp">Buy me a coffy</p>
-        </li>
-        <li>
-          <button className="sp">Add your portfolio</button>
+          <button onClick={clickHandler} className="sp">
+            Add your portfolio
+          </button>
         </li>
       </ul>
     </nav>

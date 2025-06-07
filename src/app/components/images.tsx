@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import data from '../../data.json';
 import HoverAnimation from './hoveranimation';
@@ -22,17 +23,23 @@ const images = () => {
     <div className="images">
       {numberofrows.map((i) => {
         return (
-          <ul className={`row${i + 1}`} key={i} data-speed={'0.1'}>
+          <ul className={`row${i + 1}`} key={i}>
             {data[i].map((data: ImageData) => {
               return (
-                <li
-                  key={data.key}
-                  style={{
-                    height: `calc(${i == 0 ? 27 : i == 1 ? 31 : 36}vw / ${
-                      data.proportion
-                    } + 17px)`,
-                  }}
-                >
+                <li key={data.key} className="imageConteiner">
+                  <style jsx>{`
+                    .imageConteiner {
+                      height: calc(
+                        ${i == 0 ? 27 : i == 1 ? 31 : 36}vw / ${data.proportion} +
+                          17px
+                      );
+                    }
+                    @media screen and (max-width: 1000px) {
+                      .imageConteiner {
+                        height: calc(90vw / ${data.proportion});
+                      }
+                    }
+                  `}</style>
                   <Image
                     className="image"
                     src={data.src}
