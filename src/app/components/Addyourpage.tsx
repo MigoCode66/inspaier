@@ -53,6 +53,13 @@ const Addyourpage: React.FC = () => {
       SetIsbuttonDisabled(false);
     }
   };
+  const clickHandler = async (e: React.MouseEvent) => {
+    if (typeof setView === 'function') {
+      setView('none');
+      console.log(view);
+    }
+  };
+  console.log(view);
 
   const buttonClickHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -94,6 +101,7 @@ const Addyourpage: React.FC = () => {
           width={20}
           height={20}
           alt="Close"
+          onClick={clickHandler}
         ></Image>
         <b>Add Your page</b>
         <section className="Imagesection">
