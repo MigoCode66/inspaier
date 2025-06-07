@@ -1,30 +1,24 @@
-# Inspaier
+### Inspaier
 
-Free database of portfolios
+Inspaier is a free, open-source database of creative and professional portfolios. Whether you’re a designer, developer, photographer, or any creative professional, Inspaier helps you discover, showcase, and share portfolios from around the world.
 
 ## Authors
 
 - [@xMigo](https://github.com/MigoCode66)
 
-## Run Locally
+## 🤝 Contributing
 
-Clone the project
+We welcome contributions of all kinds!
 
-```bash
-  git clone https://github.com/MigoCode66
-```
+Fork this repository.
 
-Go to the project directory
+Create a feature branch: git checkout -b feature/YourFeature
 
-```bash
-  cd my-project
-```
+Commit your changes: git commit -m "Add YourFeature Description"
 
-Install dependencies
+Push to the branch: git push origin feature/YourFeature
 
-```bash
-  npm install
-```
+Open a Pull Request and describe your changes.
 
 ## License
 
